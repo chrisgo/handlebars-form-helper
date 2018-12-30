@@ -3,7 +3,7 @@
 A library of handlebars helpers that help with building forms.
 
 * Tested only on Node 10.x (ES6), most likely only works with Handlebars 3.x
-* Can be used Express 4.x and https://github.com/ericf/express-handlebars
+* Can be used with Express 4.x and https://github.com/ericf/express-handlebars
 
 ## Installation
 
@@ -31,15 +31,35 @@ would.
 
 ### For use with Express and `express-handlebars`
 
+In server.js (or where you call `const app = express();`)
 
-
-
+```javascript
+const express = require('express');
+const exphbs = require('express-handlebars');
+const hbsFormHelper = require('handlebars-form-helper');
+...
+const app = express();
+const hbs = exphbs.create({
+  defaultLayout: 'app',
+  extname: '.hbs',
+  layoutsDir: `${__dirname}/app/views/layouts/`,
+  partialsDir: `${__dirname}/app/views/partials/`,
+});
+// We have to
+hbsFormHelper.registerHelpers(hbs.handlebars, {
+  namespace: 'form',
+});
+app.engine('.hbs', hbs.engine);
+app.set('view engine', '.hbs');
+...
+app.listen(...);
+```
 
 ### Using the helpers
 
 Most of the helpers can be used inline, for example:
 
-```
+```html
 {{form-label 'name' 'Please enter your name'}}
 ```
 
@@ -57,7 +77,7 @@ HandlebarsFormHelper.register(Handlebars, {
 
 Now the helpers are created with that namespace, for example:
 
-```
+```html
 {{myform-label 'name' 'Please enter your name'}}
 ```
 
@@ -107,7 +127,7 @@ Additionally, checkboxes and radio buttons gets more unique `id` by suffixing th
 Besides the defined attributes above, you can pass additional HTML attributes at
 the end of the helper and these will show up in the final HTML tag
 
-```
+```handlebars
 {{form-text 'firstname' person.name
   style='background-color:red;'
   class='form-control required'
@@ -117,11 +137,8 @@ the end of the helper and these will show up in the final HTML tag
 
 renders
 
-```
-<input
- type="text"
- id="field-firstName"
- name="firstName"
+```html
+<input type="text" id="field-firstName" name="firstName" value="person.name"
  style="background-color:red;"
  class="form-control required"
  data-id="1234" />
@@ -130,14 +147,12 @@ renders
 #### Examples:
 
 **Form helper**
-```html
-{{form '' '/contact' class="form"}}{{/form}}
+```handlebars
+{{form-open 'user' '/user' class='form'}}
 ```
 ```html
-<form method="POST" action="/contact" class="form"></form>
+<form id="form-user" name="user" method="POST" action="/user" class="form"></form>
 ```
-
-
 
 **Label helper**
 ```html
