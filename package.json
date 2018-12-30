@@ -1,0 +1,27 @@
+{
+  "name": "handlebars-form-helper",
+  "version": "1.0.0",
+  "description": "Handlebars Form Helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisgo/handlebars-form-helper.git"
+  },
+  "keywords": [
+    "handlebars",
+    "express-handlebars",
+    "form",
+    "helper",
+    "handlebars",
+    "helper"
+  ],
+  "author": "Chris Go",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisgo/handlebars-form-helper/issues"
+  },
+  "homepage": "https://github.com/chrisgo/handlebars-form-helper#readme"
+}
