@@ -45,10 +45,8 @@ const hbs = exphbs.create({
   layoutsDir: `${__dirname}/app/views/layouts/`,
   partialsDir: `${__dirname}/app/views/partials/`,
 });
-// We have to
-hbsFormHelper.registerHelpers(hbs.handlebars, {
-  namespace: 'form',
-});
+// Call the registerHelper and pass in the handlebars object
+hbsFormHelper.registerHelpers(hbs.handlebars, { namespace: 'form' });
 app.engine('.hbs', hbs.engine);
 app.set('view engine', '.hbs');
 ...
