@@ -240,7 +240,6 @@ renders
 
 You can also pass an array on the `selected` attribute for multiple selected items
 
-
 #### Button Helper
 
 ```handlebars
@@ -255,6 +254,12 @@ You can also pass an array on the `selected` attribute for multiple selected ite
 ## Contributing
 
 Feel free to send pull requests.
+
+## References
+
+* https://github.com/badsyntax/handlebars-form-helpers/blob/master/src/handlebars.form-helpers.js
+* https://laravelcollective.com/docs/5.4/html
+* https://docs.koseven.ga/guide-api/Form
 
 ## TODO
 
