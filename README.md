@@ -2,7 +2,7 @@
 
 A library of handlebars helpers that help with building forms.
 
-* Tested only on Node 10.x (ES6), most likely only works with Handlebars 3.x
+* Tested only on Node 10.x (ES6), most likely only works with Handlebars 3.x/4.x
 * Can be used with Express 4.x and https://github.com/ericf/express-handlebars
 
 ## Installation
@@ -31,7 +31,7 @@ would.
 
 ### For use with Express and `express-handlebars`
 
-In server.js (or where you call `const app = express();`)
+In server.js
 
 ```javascript
 const express = require('express');
@@ -63,7 +63,7 @@ Most of the helpers can be used inline, for example:
 {{form-label 'name' 'Please enter your name'}}
 ```
 
-For simplicity, all the helpers are written as expression helpers:
+For simplicity, all the helpers are written as *expression* helpers.
 
 By default the helpers are registered without a default namespace of `form`.
 If you need to change the helpers namespace, you can specify a custom namespace when
