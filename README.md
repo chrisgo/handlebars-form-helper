@@ -88,8 +88,8 @@ The `type` corresponds as close as possible to `<input type="type" ...>`
 {{form-open 'user' url class='form'}}
 {{form-close}}
 {{form-label 'name' 'Please enter your name'}}
-{{form-text 'firstname' person.name}}
-{{form-input 'firstname' person.name}}          // same as above
+{{form-text 'firstName' person.name}}
+{{form-input 'firstName' person.name}}          // same as above
 {{form-hidden 'secret' 'key123'}}
 {{form-password 'password'}}
 {{form-textarea 'text' 'Here is some text'}}
@@ -117,18 +117,18 @@ field type as a prefix to the name of the field
 
 All other types gets prefixed with `field-`
 
-* `{{form-input 'firstname' ...}}` renders `<form id="field-firstName" name="firstName" ...>`
+* `{{form-input 'firstName' ...}}` renders `<form id="field-firstName" name="firstName" ...>`
 
 Additionally, checkboxes and radio buttons gets more unique `id` by suffixing the value
 
-* `{{form-checkbox 'apples' 'yes' ...}}` yields `<form id="field-apples-yes" name="apples" ...>`
-* `{{form-radio 'apples' 'yes' ...}}` yields `<form id="field-apples-yes" name="apples" ...>`
+* `{{form-checkbox 'apples' 'yes' ...}}` renders `<form id="field-apples-yes" name="apples" ...>`
+* `{{form-radio 'apples' 'yes' ...}}` renders `<form id="field-apples-yes" name="apples" ...>`
 
 Besides the defined attributes above, you can pass additional HTML attributes at
 the end of the helper and these will show up in the final HTML tag
 
 ```handlebars
-{{form-text 'firstname' person.name
+{{form-text 'firstName' person.name
   style='background-color:red;'
   class='form-control required'
   data-id='1234'
@@ -148,7 +148,7 @@ If you do not want this behavior, just add an `id=false` (uses id=name)
 OR `id=someotherid` to additional HTML attributes to override it
 
 ```handlebars
-{{form-text 'firstname' person.name id=false}}
+{{form-text 'firstName' person.name id=false}}
 ```
 
 renders
@@ -158,7 +158,7 @@ renders
 ```
 
 ```handlebars
-{{form-text 'firstname' person.name id='someotherid'}}
+{{form-text 'firstName' person.name id='someotherid'}}
 ```
 
 renders
@@ -198,8 +198,8 @@ renders
 #### Input Helper
 
 ```handlebars
-{{form-text 'firstname' person.name}}
-{{form-input 'firstname' person.name}}  // same as above
+{{form-text 'firstName' person.name}}
+{{form-input 'firstName' person.name}}  // same as above
 {{form-hidden 'secret' 'key123'}}
 {{form-password 'password'}}
 {{form-textarea 'text' 'Here is some text'}}
@@ -211,8 +211,8 @@ renders
 {{form-radio 'apples' 'yes'}}
 ```
 ```html
-<input type="text" id="field-firstname" name="firstName" value="person.name" />
-<input type="text" id="field-firstname" name="firstName" value="person.name" />
+<input type="text" id="field-firstName" name="firstName" value="person.name" />
+<input type="text" id="field-firstName" name="firstName" value="person.name" />
 <input type="hidden" id="field-secret" name="secret" value="key123" />
 <input type="password" id="field-password" name="password" />
 <textarea id="field-text" name="text">Here is some text</textarea>
