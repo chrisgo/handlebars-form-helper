@@ -1,6 +1,6 @@
 {
   "name": "handlebars-form-helper",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Handlebars Form Helper",
   "main": "index.js",
   "scripts": {
